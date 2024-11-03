@@ -46,6 +46,7 @@ func die():
 func take_damage(amount: int):
   var new_health = current_health - amount 
   current_health = max(0, new_health)
+  GlobalSignalBus.player_hurt.emit()
 
 func _on_detector_area_entered(area: Area2D) -> void:
   pass

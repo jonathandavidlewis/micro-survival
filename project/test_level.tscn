@@ -18,6 +18,3 @@ position = Vector2(96, 72)
 position = Vector2(26, 43)
 
 [node name="Enemy" parent="." instance=ExtResource("4_b73sx")]
-speed = 80
-attack_interval = 1.0
-attack_damage = 5

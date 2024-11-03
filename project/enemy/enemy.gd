@@ -27,8 +27,9 @@ func _physics_process(delta: float) -> void:
     for target in targets:
       if target.has_method("receive_hit") and not attack_is_on_cooldown:
         attack_is_on_cooldown = true
-        attack_timer.start()
+        attack_timer.start(attack_interval)
         target.receive_hit(attack_damage)
+        GlobalSignalBus.enemy_attacked.emit()
   
 
 func _on_detector_body_entered(body:Node2D) -> void:
@@ -43,3 +44,8 @@ func _on_detector_body_exited(body:Node2D) -> void:
 func attack():
   pass
   
+
+
+func _on_attack_timer_timeout() -> void:
+  attack_is_on_cooldown = false
+  pass # Replace with function body.
