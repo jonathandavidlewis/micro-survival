@@ -61,7 +61,6 @@ func _physics_process(delta: float) -> void:
     is_moving = false
     GlobalSignalBus.move_stopped.emit(self)
 
-
 func die():
   is_dead = true
   GlobalSignalBus.player_died.emit()

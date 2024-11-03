@@ -52,7 +52,6 @@ position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_yyjfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-96, -72)
 position_smoothing_enabled = true
 
 [node name="HurtBox" type="Area2D" parent="."]
