@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var max_health = 100
 
 @onready var detector: Area2D = %Detector
+@onready var hurt_box: Area2D = %HurtBox
+
 var is_dead := false
 var is_moving := false
 
@@ -56,3 +58,16 @@ func _on_detector_body_entered(body: Node2D) -> void:
 
 func _on_detector_body_exited(body: Node2D) -> void:
   pass
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+  pass # Replace with function body.
+
+
+func _on_hurt_box_area_exited(area: Area2D) -> void:
+  pass # Replace with function body.
+
+
+func _on_hurt_box_hit(damage: int) -> void:
+  take_damage(damage)
+  pass # Replace with function body.

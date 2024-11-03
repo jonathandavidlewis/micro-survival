@@ -1,10 +1,15 @@
 extends StaticBody2D
 
 @export var speed: int = 80
+@export var attack_interval: float = 1.0
+@export var attack_damage: int = 5
 @onready var detector: Area2D = %Detector
+@onready var hit_box: Area2D = %HitBox
+@onready var attack_timer: Timer = %AttackTimer
 
 var target: Node2D
 var direction := Vector2.ZERO
+var attack_is_on_cooldown := false
 
 func _physics_process(delta: float) -> void:
   if target:
@@ -16,6 +21,15 @@ func _physics_process(delta: float) -> void:
   var translation = velocity * delta
   position = position + translation
   
+  if hit_box.has_overlapping_areas():
+    
+    var targets = hit_box.get_overlapping_areas()
+    for target in targets:
+      if target.has_method("receive_hit") and not attack_is_on_cooldown:
+        attack_is_on_cooldown = true
+        attack_timer.start()
+        target.receive_hit(attack_damage)
+  
 
 func _on_detector_body_entered(body:Node2D) -> void:
   if body.is_in_group("Player"):
@@ -25,3 +39,7 @@ func _on_detector_body_exited(body:Node2D) -> void:
   if body.is_in_group("Player"):
     direction = Vector2.ZERO
     target = null
+
+func attack():
+  pass
+  

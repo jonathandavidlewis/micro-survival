@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6adeviogiean"]
+[gd_scene load_steps=5 format=3 uid="uid://d2evpi6nvudt1"]
 
-[ext_resource type="Script" path="res://interactable/interactable.gd" id="1_aodqu"]
-[ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_nvpml"]
+[ext_resource type="Script" path="res://bush/bush.gd" id="1_nt0pb"]
+[ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_ppsvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7o6o7"]
-atlas = ExtResource("2_nvpml")
+atlas = ExtResource("2_ppsvy")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bikfp"]
 radius = 12.0416
 
-[node name="Interactable" type="Area2D" groups=["Enemy", "Interactable"]]
+[node name="Bush" type="Area2D" groups=["Enemy", "Interactable"]]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_aodqu")
+script = ExtResource("1_nt0pb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_7o6o7")

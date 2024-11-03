@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dii2c2yiu7w88"]
+[gd_scene load_steps=9 format=3 uid="uid://dii2c2yiu7w88"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_v7hkh"]
 [ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_aeko7"]
 [ext_resource type="PackedScene" uid="uid://c4sipluu5i16e" path="res://player/player_animated_sprite.tscn" id="2_tx6sh"]
+[ext_resource type="Script" path="res://player/hurt_box.gd" id="4_5axp7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35pg5"]
 radius = 8.0
@@ -15,6 +16,10 @@ region = Rect2(0, -0.246381, 23.9253, 24.5262)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyjfy"]
 radius = 7.0
 height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8p375"]
+radius = 8.0
+height = 24.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -44,7 +49,18 @@ shape = SubResource("CapsuleShape2D_yyjfy")
 position = Vector2(-96, -72)
 position_smoothing_enabled = true
 
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("4_5axp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_8p375")
+
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]
-[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
-[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="hit" from="HurtBox" to="." method="_on_hurt_box_hit"]
