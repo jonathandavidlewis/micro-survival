@@ -26,8 +26,10 @@ func _physics_process(delta: float) -> void:
       
     detector.look_at(target.global_position)
     direction = global_position.direction_to(target.global_position)
+    velocity = direction * speed
+  else:
+    velocity = Vector2.ZERO
   
-  velocity = direction * speed
   var translation = velocity * delta
   position = position + translation
   

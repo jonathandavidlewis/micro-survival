@@ -30,13 +30,13 @@ func is_moving_right():
     return translation_base.velocity.x < 0
 
 func _is_facing_left():
-    return translation_target.global_transform.x.x == -1
+    return translation_target.global_transform.x.x == 1
 
 func _is_facing_right():
     return not _is_facing_left()
 
 func _face_left():
-    translation_target.global_transform.x.x = -1
+    translation_target.global_transform.x.x = 1
 
 func _face_right():
-    translation_target.global_transform.x.x = 1
+    translation_target.global_transform.x.x = -1
