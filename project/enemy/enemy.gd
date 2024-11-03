@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
         attack_timer.start(attack_interval)
         target.receive_hit(attack_damage)
         GlobalSignalBus.enemy_attacked.emit()
-  
 
 func _on_detector_body_entered(body:Node2D) -> void:
   if body.is_in_group("Player"):
