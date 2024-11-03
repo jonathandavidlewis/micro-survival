@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var hydration_tick_timer: Timer = %HydrationTickTimer
 @onready var drink_ui: Control = %DrinkUi
 @onready var hide_ui: Control = %HideUi
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 var is_hidden := false:
   set(val):
@@ -50,6 +51,7 @@ func _ready() -> void:
   hydration_tick_timer.start(hydration_tick_interval)
   drink_ui.visible = false
   hide_ui.visible = false
+  animated_sprite_2d.play("idle")
 
 func drink():
   current_hydration += hydration_drink_amount
@@ -58,11 +60,9 @@ func drink():
     if area.is_in_group("Water"):
       area.get_drank()
   
-
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("interact") and can_drink:
     drink()
-
 
 func _physics_process(delta: float) -> void:
   var input = Input.get_vector("left", "right", "up", "down").normalized()
@@ -71,11 +71,13 @@ func _physics_process(delta: float) -> void:
 
   if abs(velocity) > Vector2.ZERO and !is_moving:
     is_moving = true
+    animated_sprite_2d.play("run")
     GlobalSignalBus.move_started.emit(self)
     return
   
   if velocity == Vector2.ZERO and is_moving:
     is_moving = false
+    animated_sprite_2d.play("idle")
     GlobalSignalBus.move_stopped.emit(self)
 
 func die():

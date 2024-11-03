@@ -17,7 +17,7 @@ height = 22.0
 points = PackedVector2Array(-12, 0, 100, 50, 100, -50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78dtg"]
-radius = 151.013
+radius = 102.122
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5le5"]
 radius = 8.0
@@ -32,6 +32,7 @@ script = ExtResource("2_niqax")
 translation_base = NodePath("..")
 
 [node name="AnimatedSprite2D" parent="HorizontalFlipper" instance=ExtResource("2_onelh")]
+unique_name_in_owner = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="HorizontalFlipper"]
 visible = false
