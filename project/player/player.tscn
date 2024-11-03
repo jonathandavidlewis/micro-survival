@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dii2c2yiu7w88"]
+[gd_scene load_steps=10 format=3 uid="uid://dii2c2yiu7w88"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_v7hkh"]
 [ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_aeko7"]
+[ext_resource type="Script" path="res://flipper.gd" id="2_ninjb"]
 [ext_resource type="PackedScene" uid="uid://c4sipluu5i16e" path="res://player/player_animated_sprite.tscn" id="2_tx6sh"]
 [ext_resource type="Script" path="res://player/hurt_box.gd" id="4_5axp7"]
 
@@ -30,9 +31,14 @@ script = ExtResource("1_v7hkh")
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_35pg5")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_tx6sh")]
+[node name="Flipper" type="Node2D" parent="." node_paths=PackedStringArray("translation_base")]
+unique_name_in_owner = true
+script = ExtResource("2_ninjb")
+translation_base = NodePath("..")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" parent="Flipper" instance=ExtResource("2_tx6sh")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Flipper"]
 position = Vector2(0, -12)
 texture = SubResource("AtlasTexture_o60hl")
 
@@ -59,8 +65,12 @@ script = ExtResource("4_5axp7")
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_8p375")
 
+[node name="HydrationTickTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]
 [connection signal="hit" from="HurtBox" to="." method="_on_hurt_box_hit"]
+[connection signal="timeout" from="HydrationTickTimer" to="." method="_on_hydration_tick_timer_timeout"]

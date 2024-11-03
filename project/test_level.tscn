@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0tbph8132cpp"]
+[gd_scene load_steps=6 format=3 uid="uid://b0tbph8132cpp"]
 
 [ext_resource type="PackedScene" uid="uid://dul8mhj7pomaw" path="res://ui/ui.tscn" id="1_h4h34"]
 [ext_resource type="PackedScene" uid="uid://dii2c2yiu7w88" path="res://player/player.tscn" id="2_vysy5"]
 [ext_resource type="PackedScene" uid="uid://b6adeviogiean" path="res://interactable/interactable.tscn" id="3_ys2u7"]
 [ext_resource type="PackedScene" uid="uid://d0y0habehy3a2" path="res://enemy/enemy.tscn" id="4_b73sx"]
+[ext_resource type="PackedScene" uid="uid://d2evpi6nvudt1" path="res://bush/bush.tscn" id="5_jtpfb"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -18,3 +19,6 @@ position = Vector2(96, 72)
 position = Vector2(26, 43)
 
 [node name="Enemy" parent="." instance=ExtResource("4_b73sx")]
+
+[node name="Bush" parent="." instance=ExtResource("5_jtpfb")]
+position = Vector2(-10, -65)

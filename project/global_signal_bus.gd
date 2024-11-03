@@ -12,6 +12,7 @@ signal enemy_attacked
 signal player_health_low
 
 signal player_hydration_low
+signal player_hydration_updated(hydration: int)
 signal player_drank_water
 
 signal player_started_hiding

@@ -3,21 +3,31 @@ extends StaticBody2D
 @export var speed: int = 80
 @export var attack_interval: float = 1.0
 @export var attack_damage: int = 5
+@export var original_position_delay: float = 2.0
+
 @onready var detector: Area2D = %Detector
 @onready var hit_box: Area2D = %HitBox
 @onready var attack_timer: Timer = %AttackTimer
+@onready var original_position_timer: Timer = %OriginalPositionTimer
 
+
+var velocity: Vector2 = Vector2.ZERO
 var target: Node2D
 var direction := Vector2.ZERO
 var attack_is_on_cooldown := false
 
+var start_position: Vector2
+
+func _ready() -> void:
+  start_position = position
+
 func _physics_process(delta: float) -> void:
-  if target:
+  if target and not target.is_hidden:
       
     detector.look_at(target.global_position)
     direction = global_position.direction_to(target.global_position)
   
-  var velocity = direction * speed
+  velocity = direction * speed
   var translation = velocity * delta
   position = position + translation
   

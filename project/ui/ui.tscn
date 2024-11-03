@@ -39,6 +39,21 @@ layout_mode = 2
 size_flags_vertical = 4
 show_percentage = false
 
+[node name="Hydration" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Hydration"]
+layout_mode = 2
+text = "Hydration: "
+
+[node name="HydrationBar" type="ProgressBar" parent="Control/VBoxContainer/Hydration"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 10)
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+show_percentage = false
+
 [node name="GameOverContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 process_mode = 2

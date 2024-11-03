@@ -2,6 +2,8 @@ class_name UICanvas
 extends CanvasLayer
 
 @onready var health_bar: ProgressBar = %HealthBar
+@onready var hydration_bar: ProgressBar = %HydrationBar
+
 @onready var start_button: Button = %StartButton
 @onready var game_over_container: VBoxContainer = %GameOverContainer
 
@@ -11,6 +13,10 @@ func _ready() -> void:
   GlobalSignalBus.player_health_max_updated.connect(_on_player_health_max_updated)
   GlobalSignalBus.player_health_updated.connect(_on_player_health_updated)
   GlobalSignalBus.player_died.connect(_on_player_died)
+  GlobalSignalBus.player_hydration_updated.connect(_on_player_hydration_updated)
+
+func _on_player_hydration_updated(value: int):
+  hydration_bar.value = value
 
 func _on_player_health_updated(value: int):
   health_bar.value = value

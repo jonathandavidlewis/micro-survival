@@ -10,8 +10,8 @@ region = Rect2(26, 9, 23.8822, 23.9624)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11yjq"]
 size = Vector2(14, 10)
 
-[node name="Bush" type="Area2D" groups=["Enemy", "Interactable"]]
-collision_layer = 4
+[node name="Bush" type="Area2D" groups=["Bush", "Interactable"]]
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_nt0pb")
 
