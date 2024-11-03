@@ -34,6 +34,7 @@ translation_base = NodePath("..")
 [node name="AnimatedSprite2D" parent="HorizontalFlipper" instance=ExtResource("2_onelh")]
 
 [node name="Sprite2D4" type="Sprite2D" parent="HorizontalFlipper"]
+visible = false
 texture = SubResource("AtlasTexture_mt7ja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

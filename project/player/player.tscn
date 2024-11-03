@@ -39,6 +39,7 @@ translation_base = NodePath("..")
 [node name="AnimatedSprite2D" parent="Flipper" instance=ExtResource("2_tx6sh")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Flipper"]
+visible = false
 position = Vector2(0, -12)
 texture = SubResource("AtlasTexture_o60hl")
 
