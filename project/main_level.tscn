@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctg31nmbj8psi"]
+
+[ext_resource type="PackedScene" uid="uid://dul8mhj7pomaw" path="res://ui/ui.tscn" id="1_g2uwy"]
+[ext_resource type="PackedScene" uid="uid://dii2c2yiu7w88" path="res://player/player.tscn" id="2_87xmn"]
+[ext_resource type="PackedScene" uid="uid://d0y0habehy3a2" path="res://enemy/enemy.tscn" id="4_ykdti"]
+[ext_resource type="PackedScene" uid="uid://b6adeviogiean" path="res://interactable/interactable.tscn" id="5_edi4b"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource("1_g2uwy")]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("2_87xmn")]
+unique_name_in_owner = true
+position = Vector2(96, 72)
+
+[node name="Interactable" parent="." instance=ExtResource("5_edi4b")]
+position = Vector2(26, 43)
+
+[node name="Enemy" parent="." instance=ExtResource("4_ykdti")]

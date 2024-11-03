@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0y0habehy3a2"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_m5j6a"]
+[ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_p8ojs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt7ja"]
+atlas = ExtResource("2_p8ojs")
+region = Rect2(24, 25, 24, 23)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1ouy"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ovhm2"]
+points = PackedVector2Array(-12, 0, 100, 50, 100, -50)
+
+[node name="Enemy" type="StaticBody2D" groups=["Enemy"]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_m5j6a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_mt7ja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k1ouy")
+
+[node name="Detector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("ConvexPolygonShape2D_ovhm2")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
