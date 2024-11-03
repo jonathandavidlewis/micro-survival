@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crnh764ug3l4a"]
+
+[ext_resource type="Script" path="res://music_player/music_player.gd" id="1_jmqb3"]
+[ext_resource type="AudioStream" uid="uid://j1001bvns7t4" path="res://assets/1 hour jam.mp3" id="2_rwhvy"]
+
+[node name="MusicController" type="Node"]
+script = ExtResource("1_jmqb3")
+track_0 = ExtResource("2_rwhvy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
