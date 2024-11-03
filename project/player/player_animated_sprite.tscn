@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://c4sipluu5i16e"]
+[gd_scene load_steps=7 format=3 uid="uid://c4sipluu5i16e"]
+
+[ext_resource type="Texture2D" uid="uid://dv5lf1b3es5kk" path="res://assets/art/micro_survivor_sprite_sheet.png" id="1_dddqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmqs0"]
+atlas = ExtResource("1_dddqt")
+region = Rect2(1, 34, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibukc"]
+atlas = ExtResource("1_dddqt")
+region = Rect2(26, 34, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lqby"]
+atlas = ExtResource("1_dddqt")
+region = Rect2(51, 34, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sabss"]
+atlas = ExtResource("1_dddqt")
+region = Rect2(76, 34, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_207na"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmqs0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ibukc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_3lqby")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sabss")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_207na")
+animation = &"run"
+frame_progress = 0.759544

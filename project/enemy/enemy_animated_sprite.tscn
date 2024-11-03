@@ -1,4 +1,49 @@
-[gd_scene format=3 uid="uid://mrj5xfhn1672"]
+[gd_scene load_steps=7 format=3 uid="uid://mrj5xfhn1672"]
+
+[ext_resource type="Texture2D" uid="uid://dv5lf1b3es5kk" path="res://assets/art/micro_survivor_sprite_sheet.png" id="1_umcwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnc16"]
+atlas = ExtResource("1_umcwp")
+region = Rect2(1, 59, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38hnc"]
+atlas = ExtResource("1_umcwp")
+region = Rect2(26, 59, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsxxv"]
+atlas = ExtResource("1_umcwp")
+region = Rect2(51, 59, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whhll"]
+atlas = ExtResource("1_umcwp")
+region = Rect2(76, 59, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3x1xd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnc16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_38hnc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_bsxxv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_whhll")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
-animation = &""
+sprite_frames = SubResource("SpriteFrames_3x1xd")
+animation = &"run"
+frame_progress = 0.778525
