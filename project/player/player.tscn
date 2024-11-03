@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dii2c2yiu7w88"]
+[gd_scene load_steps=7 format=3 uid="uid://dii2c2yiu7w88"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_v7hkh"]
 [ext_resource type="Texture2D" uid="uid://caapuolmxiw4p" path="res://assets/art/greybox.png" id="2_aeko7"]
+[ext_resource type="PackedScene" uid="uid://c4sipluu5i16e" path="res://player/player_animated_sprite.tscn" id="2_tx6sh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35pg5"]
 radius = 8.0
@@ -23,6 +24,8 @@ script = ExtResource("1_v7hkh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_35pg5")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_tx6sh")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)

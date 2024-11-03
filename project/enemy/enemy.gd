@@ -25,4 +25,3 @@ func _on_detector_body_exited(body:Node2D) -> void:
   if body.is_in_group("Player"):
     direction = Vector2.ZERO
     target = null
-

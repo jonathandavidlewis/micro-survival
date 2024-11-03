@@ -56,3 +56,14 @@ _ready():
 func _on_player_hurt():
   if not is_playing():
     play("hurt")
+
+## Priority list
+
+1. Level Design
+
+Player gets hurt
+Player dies
+Player drinks water
+
+
+raptor waits before leaving
