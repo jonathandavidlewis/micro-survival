@@ -1,5 +1,19 @@
 # Planning
 
+## Art
+
+24x24 pixel art
+All in 1 single file
+Grid aligned on a 24x24 grid
+
+- Player
+  - Side view 2 frame run, facing right
+- Enemy
+  - Side view 2 frame run, facing right
+- Water Source
+- Bush
+- Ground
+
 ## Events
 
 signal player_health_updated(value: int)
