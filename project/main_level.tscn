@@ -15,36 +15,134 @@ unique_name_in_owner = true
 position = Vector2(154, 110)
 
 [node name="Enemy" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(-139, 94)
+position = Vector2(-1294, -1185)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(-52, 197)
+position = Vector2(-1102, 197)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(251, 257)
+position = Vector2(-1468, 2244)
 
 [node name="Enemy4" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(320, 127)
+position = Vector2(1423, 1954)
+
+[node name="Enemy11" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-69, 1290)
+
+[node name="Enemy12" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1111, 2657)
 
 [node name="Enemy5" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(258, -12)
+position = Vector2(2757, -42)
 
 [node name="Enemy6" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(109, 171)
+position = Vector2(-81, -804)
 
 [node name="Enemy7" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(4, 29)
+position = Vector2(110, -32)
+
+[node name="Enemy35" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-207, 309)
+
+[node name="Enemy36" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(288, 420)
+
+[node name="Enemy37" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-501, -335)
+
+[node name="Enemy38" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(509, -269)
+
+[node name="Enemy39" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-809, 879)
+
+[node name="Enemy40" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-451, 649)
+
+[node name="Enemy41" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(840, 860)
+
+[node name="Enemy42" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1088, 345)
 
 [node name="Enemy8" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(-248, -34)
+position = Vector2(-1844, -975)
+
+[node name="Enemy33" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1099, -925)
+
+[node name="Enemy34" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1005, -1041)
+
+[node name="Enemy13" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-3130, 3317)
+
+[node name="Enemy14" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-4170, 3385)
+
+[node name="Enemy15" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-3805, 2384)
+
+[node name="Enemy16" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(288, 4539)
+
+[node name="Enemy17" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-713, 4558)
+
+[node name="Enemy18" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-505, 3812)
+
+[node name="Enemy19" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(3039, 2578)
+
+[node name="Enemy20" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(2582, 3236)
+
+[node name="Enemy21" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(3747, 3004)
+
+[node name="Enemy22" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(2135, -2188)
+
+[node name="Enemy23" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1639, -1827)
+
+[node name="Enemy24" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(1341, -2580)
+
+[node name="Enemy25" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-4163, -206)
+
+[node name="Enemy26" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-4512, -1162)
+
+[node name="Enemy27" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-5124, -397)
+
+[node name="Enemy28" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-1271, -3365)
+
+[node name="Enemy29" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-1425, -3346)
+
+[node name="Enemy30" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-1365, -3481)
 
 [node name="Enemy9" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(54, -91)
+position = Vector2(2800, -564)
 
 [node name="Enemy10" parent="." instance=ExtResource("4_ykdti")]
-position = Vector2(-220, 314)
+position = Vector2(-2251, 1656)
+
+[node name="Enemy31" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-2477, 420)
+
+[node name="Enemy32" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-2437, 67)
 
 [node name="Bushes" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Bush" parent="Bushes" instance=ExtResource("4_r0v67")]
 position = Vector2(320, -76)
@@ -93,3 +191,186 @@ position = Vector2(39, -107)
 
 [node name="Bush16" parent="Bushes" instance=ExtResource("4_r0v67")]
 position = Vector2(-146, -113)
+
+[node name="Bush17" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-282, 214)
+
+[node name="Bush18" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-90, 382)
+
+[node name="Bush19" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(126, 484)
+
+[node name="Bush20" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-228, 492)
+
+[node name="Bush21" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-85, 561)
+
+[node name="Bush22" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(292, 675)
+
+[node name="Bush23" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(601, 506)
+
+[node name="Bush24" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(505, 335)
+
+[node name="Bush25" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(844, 239)
+
+[node name="Bush26" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(844, -181)
+
+[node name="Bush27" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(388, -367)
+
+[node name="Bush28" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-182, -455)
+
+[node name="Bush29" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-615, -277)
+
+[node name="Bush30" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-328, -277)
+
+[node name="Bush31" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(109, -277)
+
+[node name="Bush32" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(656, -56)
+
+[node name="Bush33" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-607, -114)
+
+[node name="Bush34" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-562, 159)
+
+[node name="Bush35" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-550, 461)
+
+[node name="Bush36" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-293, 699)
+
+[node name="Bush37" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(121, 840)
+
+[node name="Bush38" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(590, 926)
+
+[node name="Bush39" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-260, 1050)
+
+[node name="Bush40" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-603, 870)
+
+[node name="Bush41" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-929, 191)
+
+[node name="Bush42" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1051, -390)
+
+[node name="Bush43" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-731, -735)
+
+[node name="Bush44" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-293, -948)
+
+[node name="Bush45" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-293, -948)
+
+[node name="Bush46" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(156, -703)
+
+[node name="Bush47" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(613, -860)
+
+[node name="Bush48" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(281, -1161)
+
+[node name="Bush49" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-626, -1334)
+
+[node name="Bush50" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1222, -1121)
+
+[node name="Bush51" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1539, -669)
+
+[node name="Bush52" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1233, -181)
+
+[node name="Bush53" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1632, 94)
+
+[node name="Bush54" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1507, 699)
+
+[node name="Bush55" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1127, 1239)
+
+[node name="Bush56" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-449, 1685)
+
+[node name="Bush57" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(458, 1550)
+
+[node name="Bush58" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(1324, 1050)
+
+[node name="Bush59" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(1876, 265)
+
+[node name="Bush60" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(1888, -1121)
+
+[node name="Bush61" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(1141, -1501)
+
+[node name="Bush62" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-182, -2023)
+
+[node name="Bush63" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1643, -2171)
+
+[node name="Bush64" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-2874, -1334)
+
+[node name="Bush65" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-2885, 561)
+
+[node name="Bush66" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-2028, 2629)
+
+[node name="Bush67" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(458, 3151)
+
+[node name="Bush68" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(3866, 926)
+
+[node name="Bush69" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(3117, -1664)
+
+[node name="Bush70" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(2034, 2374)
+
+[node name="Bush71" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1495, 4324)
+
+[node name="Bush72" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(1481, -3232)
+
+[node name="Bush73" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-5083, -1687)
+
+[node name="Bush74" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(2806, 4551)
+
+[node name="Bush75" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-4584, 2291)
+
+[node name="Bush76" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-1586, -4380)
+
+[node name="Bush77" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(3092, -3132)
