@@ -39,6 +39,7 @@ Player=""
 Enemy=""
 Interactable=""
 Bush=""
+Water=""
 
 [input]
 

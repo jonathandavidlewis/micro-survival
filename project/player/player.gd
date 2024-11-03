@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var max_hydration: int = 100
 @export var hydration_tick_interval: float = 1.0
 @export var hydration_tick_amount: float = 2
+@export var hydration_drink_amount := 20
 
 @onready var detector: Area2D = %Detector
 @onready var hurt_box: Area2D = %HurtBox
@@ -14,6 +15,7 @@ var is_hidden := false
 
 var is_dead := false
 var is_moving := false
+var can_drink := false
 
 var current_health = max_health:
   set(val):
@@ -32,8 +34,18 @@ func _ready() -> void:
   GlobalSignalBus.player_health_updated.emit(max_health)
   hydration_tick_timer.start(hydration_tick_interval)
 
+func drink():
+  current_hydration += hydration_drink_amount
+  var areas = detector.get_overlapping_areas()
+  for area in areas:
+    if area.is_in_group("Water"):
+      area.get_drank()
+  
+
 func _input(event: InputEvent) -> void:
-  pass
+  if event.is_action_pressed("interact") and can_drink:
+    drink()
+
 
 func _physics_process(delta: float) -> void:
   var input = Input.get_vector("left", "right", "up", "down").normalized()
@@ -63,6 +75,10 @@ func take_damage(amount: int):
 func _on_detector_area_entered(area: Area2D) -> void:
   if area.is_in_group("Bush"):
     is_hidden = true
+  if area.is_in_group("Water"):
+    can_drink = true
+    
+    pass
   pass
 
 func _on_detector_area_exited(area: Area2D) -> void:
