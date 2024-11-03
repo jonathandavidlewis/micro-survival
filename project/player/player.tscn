@@ -7,20 +7,20 @@
 [ext_resource type="Script" path="res://player/hurt_box.gd" id="4_5axp7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35pg5"]
-radius = 8.0
-height = 26.0
+radius = 3.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o60hl"]
 atlas = ExtResource("2_aeko7")
 region = Rect2(0, -0.246381, 23.9253, 24.5262)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyjfy"]
-radius = 7.0
-height = 26.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8p375"]
-radius = 8.0
-height = 24.0
+radius = 3.0
+height = 18.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -28,7 +28,7 @@ collision_mask = 7
 script = ExtResource("1_v7hkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_35pg5")
 
 [node name="Flipper" type="Node2D" parent="." node_paths=PackedStringArray("translation_base")]
@@ -37,6 +37,7 @@ script = ExtResource("2_ninjb")
 translation_base = NodePath("..")
 
 [node name="AnimatedSprite2D" parent="Flipper" instance=ExtResource("2_tx6sh")]
+position = Vector2(0, -12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Flipper"]
 visible = false
@@ -49,7 +50,7 @@ collision_layer = 4
 collision_mask = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-position = Vector2(0, -12)
+position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_yyjfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -62,7 +63,7 @@ collision_mask = 0
 script = ExtResource("4_5axp7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -12)
+position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_8p375")
 
 [node name="HydrationTickTimer" type="Timer" parent="."]
