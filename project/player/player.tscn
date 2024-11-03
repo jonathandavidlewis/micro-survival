@@ -37,11 +37,9 @@ script = ExtResource("2_ninjb")
 translation_base = NodePath("..")
 
 [node name="AnimatedSprite2D" parent="Flipper" instance=ExtResource("2_tx6sh")]
-position = Vector2(0, -12)
 unique_name_in_owner = true
-animation = &"idle"
+position = Vector2(0, -12)
 autoplay = "idle"
-frame_progress = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Flipper"]
 visible = false
