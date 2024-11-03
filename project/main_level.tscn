@@ -10,7 +10,6 @@
 
 [node name="UI" parent="." instance=ExtResource("1_g2uwy")]
 unique_name_in_owner = true
-visible = false
 
 [node name="Water" type="Node2D" parent="."]
 
