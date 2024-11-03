@@ -10,12 +10,27 @@ extends CharacterBody2D
 @onready var detector: Area2D = %Detector
 @onready var hurt_box: Area2D = %HurtBox
 @onready var hydration_tick_timer: Timer = %HydrationTickTimer
+@onready var drink_ui: Control = %DrinkUi
+@onready var hide_ui: Control = %HideUi
 
-var is_hidden := false
+var is_hidden := false:
+  set(val):
+    is_hidden = val
+    if hide_ui:
+      hide_ui.visible = val
 
 var is_dead := false
 var is_moving := false
-var can_drink := false
+var can_drink := false:
+  set(val):
+    can_drink = val
+    set_drink_help(val)
+    
+
+func set_drink_help(is_visible: bool):
+  drink_ui.visible = is_visible
+  
+  
 
 var current_health = max_health:
   set(val):
@@ -33,6 +48,8 @@ func _ready() -> void:
   GlobalSignalBus.player_health_max_updated.emit(max_health)
   GlobalSignalBus.player_health_updated.emit(max_health)
   hydration_tick_timer.start(hydration_tick_interval)
+  drink_ui.visible = false
+  hide_ui.visible = false
 
 func drink():
   current_hydration += hydration_drink_amount
@@ -76,13 +93,13 @@ func _on_detector_area_entered(area: Area2D) -> void:
     is_hidden = true
   if area.is_in_group("Water"):
     can_drink = true
-    
-    pass
-  pass
+
 
 func _on_detector_area_exited(area: Area2D) -> void:
   if area.is_in_group("Bush"):
     is_hidden = false
+  if area.is_in_group("Water"):
+    can_drink = false
 
 func _on_detector_body_entered(body: Node2D) -> void:
   pass
