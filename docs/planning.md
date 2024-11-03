@@ -23,8 +23,8 @@ signal player_died
 signal player_hurt
 signal enemy_attacked
 
-signal player_health_low
-signal player_hydration_low
+<!-- signal player_health_low
+signal player_hydration_low -->
 
 signal player_drank_water
 
