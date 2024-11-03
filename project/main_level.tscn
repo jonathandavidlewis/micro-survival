@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dul8mhj7pomaw" path="res://ui/ui.tscn" id="1_g2uwy"]
 [ext_resource type="PackedScene" uid="uid://dii2c2yiu7w88" path="res://player/player.tscn" id="2_87xmn"]
+[ext_resource type="PackedScene" uid="uid://d2evpi6nvudt1" path="res://bush/bush.tscn" id="4_r0v67"]
 [ext_resource type="PackedScene" uid="uid://d0y0habehy3a2" path="res://enemy/enemy.tscn" id="4_ykdti"]
-[ext_resource type="PackedScene" uid="uid://b6adeviogiean" path="res://interactable/interactable.tscn" id="5_edi4b"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -12,9 +12,84 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("2_87xmn")]
 unique_name_in_owner = true
-position = Vector2(96, 72)
-
-[node name="Interactable" parent="." instance=ExtResource("5_edi4b")]
-position = Vector2(26, 43)
+position = Vector2(154, 110)
 
 [node name="Enemy" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-139, 94)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-52, 197)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(251, 257)
+
+[node name="Enemy4" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(320, 127)
+
+[node name="Enemy5" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(258, -12)
+
+[node name="Enemy6" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(109, 171)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(4, 29)
+
+[node name="Enemy8" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-248, -34)
+
+[node name="Enemy9" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(54, -91)
+
+[node name="Enemy10" parent="." instance=ExtResource("4_ykdti")]
+position = Vector2(-220, 314)
+
+[node name="Bushes" type="Node2D" parent="."]
+
+[node name="Bush" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(320, -76)
+
+[node name="Bush2" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-155, 154)
+
+[node name="Bush3" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(85, 234)
+
+[node name="Bush4" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(349, 257)
+
+[node name="Bush5" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(376, 55)
+
+[node name="Bush6" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(248, 143)
+
+[node name="Bush7" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-80, 259)
+
+[node name="Bush8" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(205, 35)
+
+[node name="Bush9" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(22, 134)
+
+[node name="Bush10" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-171, 19)
+
+[node name="Bush11" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-156, 33)
+
+[node name="Bush12" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(48, 154)
+
+[node name="Bush13" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(165, 177)
+
+[node name="Bush14" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(167, 271)
+
+[node name="Bush15" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(39, -107)
+
+[node name="Bush16" parent="Bushes" instance=ExtResource("4_r0v67")]
+position = Vector2(-146, -113)
