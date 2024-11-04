@@ -1,8 +1,8 @@
 extends StaticBody2D
 
-@export var speed: int = 80
+@export var speed: int = 100
 @export var attack_interval: float = 1.0
-@export var attack_damage: int = 5
+@export var attack_damage: int = 20
 @export var original_position_delay: float = 2.0
 @export var patrol_radius: float = 200
 @export var wait_time: float = 2.0

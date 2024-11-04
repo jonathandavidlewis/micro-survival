@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var hydration_tick_interval: float = 1.0
 @export var hydration_tick_amount: float = 2
 @export var hydration_drink_amount := 20
+@export var dehydration_damage := 20
 
 @onready var detector: Area2D = %Detector
 @onready var hurt_box: Area2D = %HurtBox
@@ -119,11 +120,13 @@ func _on_hurt_box_area_exited(area: Area2D) -> void:
 
 
 func _on_hurt_box_hit(damage: int) -> void:
-  take_damage(damage)
-  pass # Replace with function body.
+  if not is_hidden:
+    take_damage(damage)
 
 func tick_dehydration():
-  current_hydration = current_hydration - hydration_tick_amount
+  current_hydration = max(0, current_hydration - hydration_tick_amount)
+  if current_hydration <= 0:
+    take_damage(dehydration_damage)
 
 func _on_hydration_tick_timer_timeout() -> void:
   tick_dehydration()
