@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctg31nmbj8psi"]
+[gd_scene load_steps=5 format=3 uid="uid://ctg31nmbj8psi"]
 
 [ext_resource type="PackedScene" uid="uid://dul8mhj7pomaw" path="res://ui/ui.tscn" id="1_g2uwy"]
 [ext_resource type="PackedScene" uid="uid://p607gvepypep" path="res://main_map.tscn" id="2_pe1re"]
+[ext_resource type="Script" path="res://player_spawner.gd" id="5_donfd"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_coug5"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -9,3 +12,12 @@
 unique_name_in_owner = true
 
 [node name="Map" parent="." instance=ExtResource("2_pe1re")]
+
+[node name="PlayerSpawner" type="Node" parent="."]
+script = ExtResource("5_donfd")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("../Map")
+replication_interval = 0.25
+delta_interval = 0.25
+replication_config = SubResource("SceneReplicationConfig_coug5")

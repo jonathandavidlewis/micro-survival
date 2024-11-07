@@ -14,8 +14,8 @@ extends StaticBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 
-var velocity: Vector2 = Vector2.ZERO
-var target: Node2D
+@export var velocity: Vector2 = Vector2.ZERO
+var targets: Array[Node2D]
 var direction := Vector2.ZERO
 var attack_is_on_cooldown := false
 
@@ -30,8 +30,15 @@ func _ready() -> void:
   patrol_timer = wait_time
   start_position = global_position
 
+#@rpc("call_local")
+#func set_remote_state(enemy_state: Dictionary):
+  #pass
+
 func _physics_process(delta: float) -> void:
-  if target and not target.is_hidden:
+  #if not is_multiplayer_authority():
+    #return
+  if targets.size() > 0 and not targets[0].is_hidden:
+    var target = targets[0]
       
     detector.look_at(target.global_position)
     direction = global_position.direction_to(target.global_position)
@@ -80,12 +87,12 @@ func set_random_patrol_position() -> void:
 
 func _on_detector_body_entered(body:Node2D) -> void:
   if body.is_in_group("Player"):
-    target = body
+    targets.append(body)
 
 func _on_detector_body_exited(body:Node2D) -> void:
   if body.is_in_group("Player"):
     direction = Vector2.ZERO
-    target = null
+    targets.erase(body)
 
 func attack():
   pass

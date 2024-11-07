@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://p607gvepypep"]
+[gd_scene load_steps=4 format=3 uid="uid://p607gvepypep"]
 
 [ext_resource type="PackedScene" uid="uid://b6adeviogiean" path="res://interactable/interactable.tscn" id="1_o4ajc"]
-[ext_resource type="PackedScene" uid="uid://dii2c2yiu7w88" path="res://player/player.tscn" id="2_hylw8"]
 [ext_resource type="PackedScene" uid="uid://d0y0habehy3a2" path="res://enemy/enemy.tscn" id="3_1qwrw"]
-[ext_resource type="Script" path="res://mini_map_camera.gd" id="3_85edq"]
 [ext_resource type="PackedScene" uid="uid://d2evpi6nvudt1" path="res://bush/bush.tscn" id="4_t7mln"]
 
 [node name="Map" type="Node2D"]
@@ -210,14 +208,6 @@ position = Vector2(1598, -5304)
 
 [node name="Interactable67" parent="Water" instance=ExtResource("1_o4ajc")]
 position = Vector2(-4736, -4519)
-
-[node name="Player" parent="." instance=ExtResource("2_hylw8")]
-unique_name_in_owner = true
-position = Vector2(154, 110)
-
-[node name="MiniMapCamera" type="Camera2D" parent="Player" groups=["MinimapCamera"]]
-enabled = false
-script = ExtResource("3_85edq")
 
 [node name="Enemy" parent="." instance=ExtResource("3_1qwrw")]
 position = Vector2(-1294, -1185)
