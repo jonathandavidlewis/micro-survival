@@ -2,8 +2,11 @@ extends "ws_webrtc_client.gd"
 
 var rtc_mp := WebRTCMultiplayerPeer.new()
 var sealed := false
+var server_url := "wss://signaling.screwloosegames.com:443"
+var players = []
 
 func _init() -> void:
+  
   connected.connect(_connected)
   disconnected.connect(_disconnected)
 
@@ -16,11 +19,28 @@ func _init() -> void:
   peer_connected.connect(_peer_connected)
   peer_disconnected.connect(_peer_disconnected)
 
+func _ready():
+  multiplayer.connected_to_server.connect(_on_connected_multiplayer)
+  #var ssl_cert = load("res://networking/cert.pem")
+  #ws.trusted_ssl_certificate = ssl_cert
+  ## Create a TLS client configuration which uses our custom trusted CA chain.
+  #var client_trusted_cas = load("res://my_trusted_cas.crt")
+  #var client_tls_options = TLSOptions.client(client_trusted_cas)
+#
+  ## Create a TLS server configuration.
+  #var server_certs = load("res://my_server_cas.crt")
+  #var server_key = load("res://my_server_key.key")
+  #var server_tls_options = TLSOptions.server(server_key, server_certs)
+
+func _on_connected_multiplayer():
+  var id = multiplayer.multiplayer_peer.get_unique_id() 
+  pass
 
 func start(url: String, _lobby: String = "", _mesh: bool = true) -> void:
   stop()
   sealed = false
-  mesh = _mesh
+  #mesh = _mesh
+  mesh = false
   lobby = _lobby
   connect_to_url(url)
 
@@ -71,6 +91,7 @@ func _connected(id: int, use_mesh: bool) -> void:
   else:
     rtc_mp.create_client(id)
   multiplayer.multiplayer_peer = rtc_mp
+  players.append(id)
 
 
 func _lobby_joined(_lobby: String) -> void:
@@ -90,6 +111,7 @@ func _disconnected() -> void:
 func _peer_connected(id: int) -> void:
   print("Peer connected: %d" % id)
   _create_peer(id)
+  players.append(id)
 
 
 func _peer_disconnected(id: int) -> void:

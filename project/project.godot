@@ -20,7 +20,8 @@ config/icon="res://icon.svg"
 GlobalSignalBus="*res://global_signal_bus.gd"
 SfxPlayer="*res://sfx_player/sfx_player.tscn"
 MusicController="*res://music_player/music_controller.tscn"
-Lobby="*res://autoloads/lobby.tscn"
+Lobby="res://autoloads/lobby.tscn"
+MultiplayerClient="*res://networking/client/multiplayer_client.tscn"
 
 [display]
 

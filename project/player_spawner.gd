@@ -8,8 +8,8 @@ var PLAYER: PackedScene = load("res://player/player.tscn")
 var current_player: CharacterBody2D
 
 func _ready() -> void:
-  if Lobby.players.size() > 0:
-    for peer_id in Lobby.players:
+  if MultiplayerClient.players.size() > 0:
+    for peer_id in MultiplayerClient.players:
       add_player(peer_id)
   else:
     add_player(1)

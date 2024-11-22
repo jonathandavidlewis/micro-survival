@@ -47,6 +47,7 @@ layout_mode = 2
 
 [node name="HostButton" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Host a game"
 
